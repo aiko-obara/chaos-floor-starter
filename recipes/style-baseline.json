@@ -1,0 +1,15 @@
+{
+  "id": "floor-isometric-v1",
+  "references": [
+    {
+      "role": "materials-and-pixel-style",
+      "path": "app/public/assets/station/console.png",
+      "sha256": "88d87357e83942f1bb7573fdde6210b26200d13e1631c5de71a15107a6214151"
+    },
+    {
+      "role": "original-body-style",
+      "path": "app/public/assets/demo/robot/final-1.png",
+      "sha256": "5e6bebe732f4640f6aa241bc3c342caefa4a7eb0315c531de53b2ad631b3b30d"
+    }
+  ]
+}

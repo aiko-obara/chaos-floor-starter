@@ -1,0 +1,14 @@
+{
+  "name": "generate2dsprite-local-processor",
+  "source": "installed generate2dsprite skill / scripts/generate2dsprite.py",
+  "observedDate": "2026-10-27",
+  "sha256": "476b69813fa148661ff75c7bf8ba0146d26e995e354b9000b63443936a5f87f7",
+  "upstreamModified": false,
+  "pythonObserved": "3.13.3",
+  "dependencies": {
+    "Pillow": "12.2.0",
+    "numpy": "2.4.4"
+  },
+  "historicalGenerationToolVersion": "not recorded; this snapshot records the processor currently installed",
+  "layoutGuideSha256": "b613e48fb0e9a025dc3ceba35886b4689fa780499e0276783532cd3cfdf9a52d"
+}

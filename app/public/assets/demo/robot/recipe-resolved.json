@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "observatory-robot",
+  "processor": "tools/sprite-processor/generate2dsprite.py",
+  "processorSha256": "476b69813fa148661ff75c7bf8ba0146d26e995e354b9000b63443936a5f87f7",
+  "input": "app/public/assets/demo/robot/raw.png",
+  "inputSha256": "9e9008f342e59f5596a0c05c0cbe03634a61ff30eb51293f7ba18b3fc6e48047",
+  "prompt": "app/public/assets/demo/robot/prompt.txt",
+  "target": "asset",
+  "mode": "idle",
+  "rows": 3,
+  "cols": 3,
+  "cellSize": 384,
+  "fitScale": 0.86,
+  "componentMode": "largest",
+  "sharedScale": true,
+  "postScaleBackgroundPasses": [
+    {
+      "threshold": 100,
+      "edgeThreshold": 150
+    },
+    {
+      "threshold": 100,
+      "edgeThreshold": 210
+    }
+  ],
+  "historyNote": "Original observatory robot created for the distributable starter; no existing franchise identity.",
+  "postScaleChromaSpillMargin": 40,
+  "expectedAtlas": "app/public/assets/demo/robot/atlas.png",
+  "expectedSha256": "765cea8171820d15def484819da4939261fe426ce9d43b6230adef0af4c56473",
+  "expectedPixelSha256": "8a94aa208e6c907e4bd30ffca05e1d6eb4232ac5c67493d3b5d2571f60c246d4",
+  "outputSha256": "765cea8171820d15def484819da4939261fe426ce9d43b6230adef0af4c56473"
+}

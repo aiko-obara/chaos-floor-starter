@@ -1,0 +1,184 @@
+{
+  "version": 3,
+  "floor": 796,
+  "style": "pixel-isometric",
+  "rooms": [
+    {
+      "id": "observatory-workshop",
+      "title": "観測ロボの工房",
+      "name": "観測ロボの工房",
+      "assetType": "collection",
+      "source": "sample",
+      "address": "D04",
+      "accent": "#82c9c5",
+      "prompt": "星を観測するオリジナルの整備ロボと小さな工房。",
+      "actors": [
+        {
+          "id": "observatory-robot",
+          "name": "観測ロボ",
+          "kind": "character",
+          "atlas": "/assets/demo/robot/atlas.png",
+          "columns": 3,
+          "rows": 3,
+          "frames": 9,
+          "fps": 4,
+          "frameDurations": [
+            450,
+            180,
+            200,
+            240,
+            320,
+            260,
+            200,
+            200,
+            420
+          ],
+          "worldWidth": 160,
+          "footAnchor": 0.9322916666666666,
+          "u": 0.56,
+          "v": 0.61,
+          "facing": "left",
+          "motion": "望遠鏡を上げ、星を観測してから胸元へ戻す"
+        },
+        {
+          "id": "workshop-prop-0",
+          "name": "console",
+          "kind": "object",
+          "atlas": "/assets/station/console.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 145,
+          "footAnchor": 0.921875,
+          "u": 0.2,
+          "v": 0.2
+        },
+        {
+          "id": "workshop-prop-1",
+          "name": "cabinet",
+          "kind": "object",
+          "atlas": "/assets/station/cabinet.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 110,
+          "footAnchor": 0.921875,
+          "u": 0.82,
+          "v": 0.18
+        },
+        {
+          "id": "workshop-prop-2",
+          "name": "plant",
+          "kind": "object",
+          "atlas": "/assets/station/plant.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 70,
+          "footAnchor": 0.921875,
+          "u": 0.14,
+          "v": 0.8
+        },
+        {
+          "id": "workshop-prop-3",
+          "name": "crates",
+          "kind": "object",
+          "atlas": "/assets/station/crates.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 100,
+          "footAnchor": 0.921875,
+          "u": 0.82,
+          "v": 0.73
+        },
+        {
+          "id": "workshop-prop-4",
+          "name": "pump",
+          "kind": "object",
+          "atlas": "/assets/station/pump.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 92,
+          "footAnchor": 0.921875,
+          "u": 0.17,
+          "v": 0.48
+        },
+        {
+          "id": "workshop-prop-5",
+          "name": "vending",
+          "kind": "object",
+          "atlas": "/assets/station/vending.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 100,
+          "footAnchor": 0.921875,
+          "u": 0.8,
+          "v": 0.44
+        },
+        {
+          "id": "workshop-prop-6",
+          "name": "crates",
+          "kind": "object",
+          "atlas": "/assets/station/crates.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 68,
+          "footAnchor": 0.921875,
+          "u": 0.3,
+          "v": 0.86
+        },
+        {
+          "id": "workshop-prop-7",
+          "name": "plant",
+          "kind": "object",
+          "atlas": "/assets/station/plant.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 52,
+          "footAnchor": 0.921875,
+          "u": 0.83,
+          "v": 0.9
+        },
+        {
+          "id": "workshop-prop-8",
+          "name": "console",
+          "kind": "object",
+          "atlas": "/assets/station/console.png",
+          "columns": 1,
+          "rows": 1,
+          "frames": 1,
+          "fps": 1,
+          "worldWidth": 66,
+          "footAnchor": 0.921875,
+          "u": 0.41,
+          "v": 0.18
+        }
+      ],
+      "references": [
+        {
+          "image": "/assets/demo/robot/raw.png",
+          "title": "オリジナル観測ロボの生成原画",
+          "sourceUrl": ""
+        }
+      ]
+    }
+  ],
+  "selectedAddress": "D04",
+  "stage": {
+    "id": "space-station",
+    "seed": 796
+  }
+}

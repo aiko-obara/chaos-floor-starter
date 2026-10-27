@@ -1,0 +1,12 @@
+{
+  "name": "chaos-floor-starter",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "python app/server.py",
+    "build:public": "python scripts/build_public.py",
+    "check:sprite-recipe": "python scripts/process_sprite_recipe.py recipes/demo-robot.json",
+    "check": "python scripts/check_theme_kit.py && node tests/starter.mjs && python -m unittest discover -s tests && python scripts/process_sprite_recipe.py recipes/demo-robot.json && python scripts/build_public.py"
+  }
+}

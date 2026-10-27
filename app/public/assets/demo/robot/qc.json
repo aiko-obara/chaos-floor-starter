@@ -1,0 +1,21 @@
+{
+  "recipe": "observatory-robot",
+  "frames": 9,
+  "edgeTouchFrames": [],
+  "emptyFrames": [],
+  "bottoms": [
+    358,
+    358,
+    358,
+    358,
+    358,
+    358,
+    358,
+    358,
+    358
+  ],
+  "footAnchor": 0.9322916666666666,
+  "sha256": "765cea8171820d15def484819da4939261fe426ce9d43b6230adef0af4c56473",
+  "acceptedAtlasMatched": false,
+  "visualReview": "not performed by this script"
+}

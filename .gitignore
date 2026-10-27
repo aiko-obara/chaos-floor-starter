@@ -1,0 +1,11 @@
+.venv/
+.local/
+.wrangler/
+dist-public/
+node_modules/
+__pycache__/
+.env
+.env.*
+!.env.example
+wrangler.jsonc
+.DS_Store
