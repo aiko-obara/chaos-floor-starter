@@ -244,6 +244,7 @@ function syncPlayback() {
 
 function updateLayoutControls() {
   const rooms = worldReady ? getPlacements() : [], locked = !worldReady || busy || placing;
+  $('remove-room').disabled = locked || !rooms.some((room) => room.address === selectedAddress);
   $('next-address').disabled = locked || !nextRoomAddress(rooms);
   $('arrange-world').disabled = locked || rooms.length < 2 || compactRoomPlan(rooms).every((entry)=>entry.from===entry.to);
   $('undo-layout').hidden = !layoutUndo;
@@ -599,6 +600,21 @@ $('place-button').addEventListener('click', async () => {
     placing = false;
     if (!lifetime.signal.aborted) updateSelection(renderer.getSelection());
   }
+});
+$('remove-room').addEventListener('click', () => {
+  if (!worldReady || busy || placing) return;
+  const room = getPlacements().find((item) => item.address === selectedAddress);
+  if (!room) return;
+  // Keep the complete room reusable, including custom positions and Music records.
+  const asset = normaliseAsset(room);
+  if (!renderer.removeRoom(selectedAddress)) return;
+  assets = [...assets.filter((item) => item.id !== asset.id), asset];
+  selectedAsset = asset;
+  clearLayoutUndo();
+  renderAssetList();
+  updateSelection(renderer.getSelection());
+  saveWorld();
+  $('save-note').textContent = `${WORLD_PREFIX}-${selectedAddress} の配置を取り消しました。素材は残っています。${$('save-note').textContent}`;
 });
 $('next-address').addEventListener('click', () => {
   if (!worldReady || busy || placing) return;
