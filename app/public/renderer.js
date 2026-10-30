@@ -118,6 +118,14 @@ export class WorldRenderer {
     this.structures=structures;this.wallSurfaces.clear();
     this.selectedAddress = room.address; this.emitSelection(); this.resetView(); this.startLoop(); return true;
   }
+  removeRoom(address = this.selectedAddress) {
+    const target = parseAddress(address)?.address;
+    if (!target || !this.rooms.some((room) => room.address === target)) return false;
+    this.loadVersion += 1;
+    this.rooms = this.rooms.filter((room) => room.address !== target);
+    this.updateStructures();
+    this.resetView(); this.emitSelection(); return true;
+  }
   readdressRooms(plan, {selectedAddress} = {}) {
     if (!Array.isArray(plan) || plan.length !== this.rooms.length) throw new Error('すべての部屋の移動先を確認してください。');
     const destinations = new Map(), used = new Set(), occupied = new Set(this.rooms.map((room)=>room.address));
