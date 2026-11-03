@@ -1,13 +1,13 @@
-html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#080d18}
+html,body{width:100%;height:100%;overflow:hidden;overscroll-behavior:none;background:#18112c}
 .icon-definitions{position:absolute;width:0;height:0;overflow:hidden}
 .sr-only{position:absolute!important;width:1px!important;height:1px!important;padding:0!important;margin:-1px!important;overflow:hidden!important;clip:rect(0,0,0,0)!important;white-space:nowrap!important;border:0!important}
 .viewer-mode .app-shell{width:100%;max-width:none;height:100%;padding:0;margin:0}
 .viewer-mode .workspace{display:block;width:100%;height:100%;padding:0;margin:0}
 .viewer-mode .world-panel{position:relative;width:100%;height:100%;min-width:0}
-.viewer-mode .stage{position:fixed;inset:0;width:100%;height:100dvh;min-height:0;max-height:none;aspect-ratio:auto;border:0;border-radius:0;margin:0;overflow:hidden;background:#080d18}
+.viewer-mode .stage{position:fixed;inset:0;width:100%;height:100dvh;min-height:0;max-height:none;aspect-ratio:auto;border:0;border-radius:0;margin:0;overflow:hidden;background:#18112c}
 .viewer-mode #world-canvas{display:block;width:100%;height:100%;touch-action:none;cursor:grab;outline-offset:-4px}
 .viewer-mode #world-canvas[data-dragging=true]{cursor:grabbing}
-.viewer-mode .stage-empty{background:#080d18;color:#91a6ae;font-size:11px;letter-spacing:.08em}
+.viewer-mode .stage-empty{background:radial-gradient(ellipse at 38% 12%,#50317b80,transparent 70%),#18112c;color:#c6b5d9;font-size:11px;letter-spacing:.08em}
 .viewer-mark{position:fixed;z-index:2;left:25px;top:24px;width:27px;height:27px;pointer-events:none;color:#a0d1cd;opacity:.7}
 .viewer-mark svg,.hud-button svg{display:block;width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
 .viewer-mark svg{width:27px;height:27px;stroke-width:1}
