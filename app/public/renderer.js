@@ -4,6 +4,7 @@ import { addRecordToRoom, createMusicRoom } from './music-room.js';
 import { musicEntries, drawDiscoFloor } from './music-renderer.js';
 import { normaliseStationStage, stationStructurePlan, stageSurfaceLayout, fixtureBounds, drawStageGround, drawStageFixture } from './station-structures.js';
 import { STATION_PALETTE, stationColor } from './station-materials.js';
+import { MindSpace } from './mind-space.js';
 
 function loadImage(url) {
   return new Promise((resolve, reject) => {
@@ -56,6 +57,7 @@ export class WorldRenderer {
     this.rooms = []; this.selectedAddress = 'A02'; this.hoverAddress = null;
     this.stage={id:'space-station',seed:796};this.structures=[];
     this.wallSurfaces=new Map();this.wallFrame=0;
+    this.mindSpace = new MindSpace();
     this.zoom = 1; this.pan = { x: 0, y: 0 }; this.elapsed = 0; this.lastTime = 0; this.frameId = 0;
     this.loadVersion = 0; this.imageCache = new Map(); this.infrastructure = new Map(); this.pointers = new Map(); this.drag = null;
     this.listeners = new AbortController();
@@ -211,13 +213,7 @@ export class WorldRenderer {
     this.canvas.width = Math.max(1, Math.round(bounds.width*dpr)); this.canvas.height = Math.max(1, Math.round(bounds.height*dpr)); this.draw();
   }
   drawSpace() {
-    const ctx = this.context, {width,height} = this.canvas;
-    ctx.fillStyle = stationColor('#080d18'); ctx.fillRect(0,0,width,height);
-    for (let i=0;i<120;i++) {
-      const x = (i*7919+313)%10007/10007*width, y=(i*3571+719)%10009/10009*height;
-      ctx.fillStyle = i%9===0?'#8ba2b8':i%3===0?'#344a65':'#1d2b40';
-      ctx.fillRect(Math.floor(x),Math.floor(y),i%17===0?2:1,i%17===0?2:1);
-    }
+    this.mindSpace.draw(this.context, this.canvas.width, this.canvas.height);
   }
   wallPanel(side, t0, t1, z0, z1, fill, stroke='#bdcbd3', width=1) {
     const endpoint = side==='left'?[-ROOM_EDGE,ROOM_EDGE/2]:[ROOM_EDGE,ROOM_EDGE/2];
@@ -533,5 +529,5 @@ export class WorldRenderer {
     if(tap){const address=this.addressFromPointer(e.clientX,e.clientY);if(address)this.selectAddress(address);this.onActivate?.(address?this.getSelection():null);}
     this.drag=null;this.canvas.dataset.dragging='false';
   }
-  destroy() { ++this.loadVersion;this.stopLoop();this.listeners.abort();this.resizeObserver.disconnect();this.imageCache.clear();this.wallSurfaces.clear();this.pointers.clear(); }
+  destroy() { ++this.loadVersion;this.stopLoop();this.listeners.abort();this.resizeObserver.disconnect();this.imageCache.clear();this.wallSurfaces.clear();this.mindSpace.destroy();this.pointers.clear(); }
 }
